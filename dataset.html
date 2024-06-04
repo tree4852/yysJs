@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html의 태그에 데이터 저장</title>
+</head>
+    <body>
+
+
+        <div id="box" style="display:inline-block">
+            버튼을 클릭해보세요.
+       </div>
+       <div class="btns">
+          <button data-bg="red" data-text="빨강색">1</button>
+          <button data-bg="yellow" data-text="노랑색">2</button>
+          <button data-bg="blue" data-text="파랑색">3</button>
+          <button data-bg="green" data-text="분홍색">4</button>
+       </div>
+  
+      <script>
+          const targetbox = document.getElementById("box"); //매서드를 다이렉트로 연결 
+          const btns = document.querySelectorAll(".btns button"); //집합,중간에 풀어 해치는 과정이 있어야함
+
+         btns.forEach(function(ele, idx){
+            // console.log("태그",ele, "순번", idx)
+            ele.addEventListener('click' , function(){
+                console.log(this); //클릭하면 그 엘리먼트가 콘솔창에 나옴
+                targetbox.innerHTML = this.dataset.text;
+                targetbox.style.backgroundColor = this.dataset.bg;
+                targetbox.style.fontSize = "80px";
+                targetbox.style.display ="flex";
+                targetbox.style.alignItems = "center";
+                targetbox.style.justifyContent = "center";
+                
+                //유지보수가 원할하도록 데이터 셋으로 처리하였다.
+            })
+         })
+
+      </script>
+
+        
+    </body>
+</html>
