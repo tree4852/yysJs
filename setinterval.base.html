@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" 
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="count">0</div>
+ 
+    <script>
+        let count = 0;
+        setInterval(function(){
+             count ++ ; //0 에서 1 추가됨
+             count %=11;  // 11로 나눌수없는 숫자들만 나옴
+             document.querySelector(".count").innerHTML=count;
+        },1000) //1초동안 실행됨
+    </script>
+    
+</body>
+</html>
