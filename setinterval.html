@@ -10,7 +10,8 @@
     <script>
         $(function(){                  //처음 시작할때 쓴다면 document ready 와 같은 뜻 
           const bglist = ["pink","red","gray","green"];  //값나열
-          let count = 100 % bglist.length ;       //bglist.length 는 숫자 4를 의미,  0.1.2.3 중에 하나 나옴  순환코드 
+          let count = 100 % bglist.length ;       //bglist.length 는 숫자 4를 의미,  4로 나눌수 없는 숫자들을 나오게 한다. (0 ,1,2,3)
+          setInterval(function(){}, 3000);
           $("body").css("background",bglist[count]);  // 
         })
     </script>
