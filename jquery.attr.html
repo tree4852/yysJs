@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리는 바닐라와 달리 인터페이스에 초점을 두고 개발된 것이라 디자인관점에 잘 맞춰져 있음</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    
+    <style>
+        body{
+            background-color: red;
+        }
+
+        h2{
+            color: white;
+        }
+        p{
+            color: yellow;
+        }
+    </style>
+    <Script>
+        $(document).ready(function(){                            // 위에 오ㅓㄹ렸기때문에 document ready를 써줘야함
+            // $("body").css("background","red").html("<h2>동적객체</h2>").prepend("<p>동적객체</p>"); // 바디의 컬러스타일은 배경색은 레드,html에 h2와 p태그를 넣는다. 
+            // $("h2").css("color", "white");   
+            // $("p").css("color",$("h2").css("color"));  // p태그의 컬러는 h2의 컬러스타일을 따라가겠다.
+           $("p").addClass("content").html("제이쿼리로 삽입하기");
+           $("h2").addClass("title").html("<span>동적</span>개체")
+        })
+    </Script>
+</head>
+    <body>
+        <p>동적객체</p>
+        <h2>동적객체</h2>
+        
+        
+    </body>
+</html>
