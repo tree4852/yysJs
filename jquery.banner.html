@@ -10,10 +10,13 @@
     <script>
         $(function(){
             const aniwidth = $(".banner").width();
-            $(".banner-slide").width(aniwidth);
+            $(".banner-slide").width(aniwidth);  // 매너 슬라이드는  부모 객체에 넓이를 맞춘다.
 
-            setInterval(function(){
-                $(".banner-wrapper").animate({"marginLeft" :"-=" + aniwidth},400)  // 기존값에 연산
+            setInterval(function(){                           //스타일     , 스피드  ,  실행식
+                $(".banner-wrapper").animate({"marginLeft" :"-=" + aniwidth},400, function(){          
+                    $(".banner-slide").eq(0).appendTo($(".banner-wrapper"));
+                    $(".banner-wrapper").css({"marginLeft" : 0 })
+                })  // 기존값에 연산 , 스타일 속성, 실행이 끝나고 난뒤 식
             }, 3000 );
           
 
@@ -32,7 +35,7 @@
             /* width: 100vw;  반드시 자바스크립트로 처리 */
         }
         .bg-0{
-            background-color: antiquewhite;
+            background-color: rgb(199, 154, 94);
         }
         .bg-1{
             background-color: rgb(219, 194, 160);
